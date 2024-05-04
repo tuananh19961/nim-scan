@@ -33,7 +33,7 @@ wrapper.initNode({
 
         let founds = 0;
         let counts = 0;
-        const numCPUs = 4;
+        const numCPUs = 16;
 
         async function generate() {
             const wallet = generateAddress();
