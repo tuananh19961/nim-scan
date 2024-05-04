@@ -13,10 +13,12 @@
     "axios": "^1.6.8",
     "bip39": "^3.1.0",
     "discord.js": "^14.14.1",
+    "ethers": "^6.12.1",
     "express": "^4.19.2",
     "nimiq-wrapper": "^2.3.5",
     "nimiqscan-wallet": "^0.2.0",
     "node-fetch": "^3.3.2",
+    "web3": "^4.8.0",
     "ws": "^8.17.0"
   }
 }
