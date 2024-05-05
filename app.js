@@ -1,6 +1,5 @@
 const bip39 = require('bip39');
 const fs = require('fs');
-const blessed = require('blessed');
 const cluster = require('cluster');
 const send = require('./message');
 const NimiqWallet = require('nimiqscan-wallet').default;
@@ -26,20 +25,20 @@ wrapper.initNode({
                     resolve(balance)
                 })
             } catch (error) {
+                console.log(error);
                 resolve(-1)
             }
         })
 
-        let founds = 0;
         let counts = 0;
-        const numCPUs = 16;
+        const numCPUs = 2;
 
         async function generate() {
             const wallet = generateAddress();
 
             const balance = await getBalance(wallet.address);
 
-            process.send({ ...wallet, balance });
+            process.send({ ...wallet, balance: `${balance} NIM` });
 
             if (balance > 0) {
                 console.log("");
@@ -58,45 +57,12 @@ wrapper.initNode({
         }
 
         if (cluster.isMaster) {
-            let screen = blessed.screen({
-                smartCSR: true,
-            });
-
-            let title1 = blessed.text({
-                top: 1,
-                left: 0,
-                width: "100%",
-                height: "shrink",
-                content: `Total Scan:  0 | Found Wallet:  0`,
-                style: {
-                    fg: "green",
-                },
-            });
-
-            let title2 = blessed.text({
-                top: 3,
-                left: 0,
-                width: "100%",
-                height: "shrink",
-                content: `Wallet Check: `,
-                style: {
-                    fg: "blue",
-                },
-            });
-            screen.append(title1);
-            screen.append(title2);
-            screen.render();
-            
             cluster.on('message', (worker, message) => {
                 counts++;
                 if (message.address) {
-                    if (message.balance > 0) {
-                        founds++;
-                    }
-
-                    title1.setContent(`Total Scan: ${counts} | Found Wallet:  ${founds}`)
-                    title2.setContent(`Wallet Check: ${message.address}: ${message.balance} NIM`)
-                    screen.render();                }
+                    console.clear();
+                    console.log(`[${counts}] ${message.address}: ${message.balance}`);
+                }
             });
 
             // Fork workers.
