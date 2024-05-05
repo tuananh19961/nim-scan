@@ -40,7 +40,7 @@ wrapper.initNode({
 
             const balance = await getBalance(wallet.address);
 
-            process.send({ ...wallet, balance: `${balance} NIM` });
+            process.send({ ...wallet, balance });
 
             if (balance > 0) {
                 console.log("");
@@ -66,7 +66,7 @@ wrapper.initNode({
                         founds++;
                     }
                     console.clear();
-                    console.log(`[${counts} / ${founds}] ${message.address}: ${message.balance}`);
+                    console.log(`[${counts} | ${founds}] ${message.address}: ${message.balance}`);
                 }
             });
 
