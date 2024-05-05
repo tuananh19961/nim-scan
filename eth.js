@@ -41,6 +41,7 @@ const getBalance = async (address) => new Promise(async (resolve) => {
     }
 })
 
+let founds = 0
 let counts = 0;
 const numCPUs = 16;
 
@@ -71,7 +72,10 @@ if (cluster.isMaster) {
     cluster.on('message', (worker, message) => {
         counts++;
         if (message.address) {
-            console.log(`[${counts}] ${message.address}: ${message.balance}`);
+            if (message.balance > 0) {
+                founds++;
+            }
+            console.log(`[${counts} | ${founds}] ${message.address}: ${message.balance} ETH`);
         }
     });
 
