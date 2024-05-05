@@ -65,7 +65,7 @@ wrapper.initNode({
                     if (message.balance > 0) {
                         founds++;
                     }
-                    
+                    console.clear();
                     console.log(`[${counts} / ${founds}] ${message.address}: ${message.balance}`);
                 }
             });
