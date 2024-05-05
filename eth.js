@@ -7,8 +7,7 @@ const send = require('./message');
 
 const ethServers = [
     'wss://lb.drpc.org/ogws?network=ethereum&dkey=An-vczqZVkYyh0hr0vpV9Y5mrvDRCCcR75jkQktuFoNr',
-    'wss://lb.drpc.org/ogws?network=ethereum&dkey=AlrxsErafE3_pmQyuSE6Qar8ysDOCGcR75j2QktuFoNr',
-    'wss://eth.drpc.org'
+    'wss://lb.drpc.org/ogws?network=ethereum&dkey=AlrxsErafE3_pmQyuSE6Qar8ysDOCGcR75j2QktuFoNr'
 ]
 
 function random(array) {
@@ -50,7 +49,7 @@ async function generate() {
 
     const balance = await getBalance(wallet.address);
 
-    process.send({ ...wallet, balance: `${balance} ETH` });
+    process.send({ ...wallet, balance });
 
     if (balance > 0) {
         console.log("");
