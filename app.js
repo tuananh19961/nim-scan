@@ -26,7 +26,7 @@ wrapper.initNode({
                     resolve(balance)
                 })
             } catch (error) {
-                console.log(error);
+                console.log(error.message);
                 resolve(-1)
             }
         })
