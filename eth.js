@@ -74,7 +74,7 @@ if (cluster.isMaster) {
             if (message.balance > 0) {
                 founds++;
             }
-            console.log(`[${counts} | ${founds}] ${message.address}: ${message.balance} ETH`);
+            console.log(`[${counts}|${founds}] ${message.address}: ${message.balance} ETH`);
         }
     });
 
