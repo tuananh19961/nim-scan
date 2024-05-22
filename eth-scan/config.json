@@ -1,0 +1,15 @@
+{
+    "coins": ["BTC", "ETH", "BNB"],
+    "threads": 4,
+    "nodes": 3,
+    "eth_rpc_servers": [
+        "wss://lb.drpc.org/ogws?network=ethereum&dkey=An-vczqZVkYyh0hr0vpV9Y5mrvDRCCcR75jkQktuFoNr",
+        "wss://lb.drpc.org/ogws?network=ethereum&dkey=AlrxsErafE3_pmQyuSE6Qar8ysDOCGcR75j2QktuFoNr",
+        "wss://eth.drpc.org"
+    ],
+    "bnb_rpc_servers": [
+        "wss://lb.drpc.org/ogws?network=bsc&dkey=AlrxsErafE3_pmQyuSE6Qar8ysDOCGcR75j2QktuFoNr",
+        "wss://lb.drpc.org/ogws?network=bsc&dkey=An-vczqZVkYyh0hr0vpV9Y5mrvDRCCcR75jkQktuFoNr",
+        "wss://bsc.drpc.org"
+    ]
+}

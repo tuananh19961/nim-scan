@@ -1,0 +1,35 @@
+{
+  "name": "eth-scan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nimiq/core": "^1.6.2",
+    "@solana/web3.js": "^1.91.8",
+    "axios": "^1.6.8",
+    "balance-crypto": "^0.2.15",
+    "bee-queue": "^1.7.1",
+    "better-queue": "^3.8.12",
+    "better-queue-memory": "^1.0.4",
+    "bip32": "^4.0.0",
+    "bip39": "^3.1.0",
+    "bitcoinjs-lib": "^5.2.0",
+    "bull": "^4.12.2",
+    "discord.js": "^14.14.1",
+    "ethers": "^6.12.1",
+    "express": "^4.19.2",
+    "kue": "^0.11.6",
+    "minimist": "^1.2.8",
+    "node-fetch": "^3.3.2",
+    "p-queue": "^8.0.1",
+    "tiny-secp256k1": "^2.2.3",
+    "uuid": "^9.0.1",
+    "web3": "^4.8.0",
+    "ws": "^8.17.0"
+  }
+}

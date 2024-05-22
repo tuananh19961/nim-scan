@@ -1,0 +1,6 @@
+{
+    "threads": 2,
+    "eth_rpc_servers": [
+        "wss://eth.drpc.org"
+    ]
+}
